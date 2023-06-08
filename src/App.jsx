@@ -1,10 +1,11 @@
 import './App.css'
+import Header from './components/Header/Header'
 
 function App() {
 
   return (
     <>
-      <button className='btn btn-secondary'>Button</button>
+      <Header/>
     </>
   )
 }
