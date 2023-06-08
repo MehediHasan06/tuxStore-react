@@ -3,8 +3,8 @@ import { FaShoppingCart } from 'react-icons/fa';
 import StarRating from '../Utility/StarRating';
 
 const ProductCard = (props) => {
-  console.log(props.product);
   const {name, img, price, ratings, seller} = props.product;
+  const {handleCart} = props;
   return (
     <div className="p-4 shadow-xl card w-80">
       <figure><img src={img} alt="tux-product" /></figure>
@@ -18,7 +18,7 @@ const ProductCard = (props) => {
         </div>
       </div>
       <div className="justify-end card-actions">
-        <button className="w-full btn btn-accent">
+        <button onClick={() => handleCart(props.product)} className="w-full btn btn-accent">
           <span>Add To Cart</span>
           <FaShoppingCart/>
         </button>
@@ -33,8 +33,9 @@ ProductCard.propTypes = {
     img: PropTypes.string,
     price: PropTypes.number,
     ratings: PropTypes.number,
-    seller: PropTypes.string
-  })
+    seller: PropTypes.string,
+  }),
+  handleCart: PropTypes.func
 };
 
 export default ProductCard;

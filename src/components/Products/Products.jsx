@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 
-const Products = () => {
+const Products = (props) => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     fetch("fake-data.json")
@@ -12,10 +13,17 @@ const Products = () => {
   return (
     <>
       {
-        products.map(product => <ProductCard key={product.id} product={product}/>)
+        products.map(product => <ProductCard 
+          key={product.id} 
+          product={product}
+          handleCart={props.handleCart}
+        />)
       }
     </>
   );
+};
+Products.propTypes = {
+  handleCart: PropTypes.func
 };
 
 export default Products;
