@@ -1,8 +1,8 @@
 import logo from "../../assets/logo.svg";
 const Header = () => {
   return (
-    <nav>
-      <div className="navbar bg-base-100">
+    <nav className="bg-base-100">
+      <div className="navbar">
         {/* Store Logo */}
         <div className="flex-1">
           <a href="#" className="w-32">
