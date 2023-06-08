@@ -4,6 +4,7 @@ function App() {
 
   return (
     <>
+      <button className='btn btn-ghost'>Button</button>
     </>
   )
 }
